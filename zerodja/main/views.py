@@ -12,17 +12,18 @@ from django.http import HttpResponse
 
 
 def main_page(request):
-    return render(request, 'main_page.html')
+    return render(request, 'HW31/main_page.html')
 
 def first_breed(request):
-    return render(request, '1st.html')
+    return render(request, 'HW31/1st.html')
 
 def second_breed(request):
-    return render(request, '2nd.html')
+    return render(request, 'HW31/2nd.html')
 
 def third_breed(request):
-    return render(request, '3rd.html')
+    return render(request, 'HW31/3rd.html')
 
 def fourth_breed(request):
-    return render(request, '4th.html')
+    return render(request, 'HW31/4th.html')
+
 
