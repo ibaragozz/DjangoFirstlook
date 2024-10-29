@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .models import news_post
+from .models import NewsPost
 
 # Create your views here.
 def home(request):
-    news = news_post.objects.all()
+    news = NewsPost.objects.all()
     return render(request, 'news/news.html', {'news': news})

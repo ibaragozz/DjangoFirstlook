@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import news_post
+from .models import NewsPost
 
 # Register your models here.
 
-admin.site.register(news_post)
+admin.site.register(NewsPost)
