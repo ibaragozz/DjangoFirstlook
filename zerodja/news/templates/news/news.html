@@ -7,14 +7,18 @@
 {% block content %}
 <h1>Новостная страница</h1>
 
-{% for news in news %}
-    <div>
-        <h2>{{ news.title }}</h2>
-        <p>{{ news.short_description }}</p>
-        <p>{{ news.text }}</p>
-        <p>{{ news.pub_date }}</p>
-        <p>{{ news.author }}</p>
-    </div>
-{% endfor %}
+    {% if news %}
+        {% for news in news %}
+            <div>
+                <h2>{{ news.title }}</h2>
+                <p>{{ news.short_description }}</p>
+                <p>{{ news.text }}</p>
+                <p>{{ news.pub_date }}</p>
+                <p>{{ news.author }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h4>Новостей ещё нет</h4>
+    {% endif %}
 
 {% endblock %}
