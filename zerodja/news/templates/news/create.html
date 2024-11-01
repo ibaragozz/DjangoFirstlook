@@ -1,22 +1,41 @@
 {% extends 'main/layout.html' %}
 
 {% block title %}
-    <title>Страница для добавления новости</title>
+    <title>Добавить новость</title>
 {% endblock %}
 
 {% block content %}
-<h1>Страница для добавления новости</h1>
-<div>
-    <h2>Форма для добавления новости</h2>
-    <form method="post">
-        <input type="text"placeholder="Заголовок новости"><br>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Добавить новость</h1>
 
-        <input type="text" placeholder="Краткое описание новости"><br>
-        <textarea placeholder="Новость"></textarea><br>
-        <input type="date" value="Добавить новость"><br>
-        <input type="time" value="Добавить новость"><br>
-        <button type="submit">Добавить новость</button><br>
-    </form>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title">Форма для добавления новости</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="newsTitle" class="form-label">Заголовок новости</label>
+                    <input type="text" class="form-control" id="newsTitle" placeholder="Введите заголовок" required>
+                </div>
+                <div class="mb-3">
+                    <label for="shortDescription" class="form-label">Краткое описание</label>
+                    <input type="text" class="form-control" id="shortDescription" placeholder="Введите краткое описание" required>
+                </div>
+                <div class="mb-3">
+                    <label for="newsText" class="form-label">Текст новости</label>
+                    <textarea class="form-control" id="newsText" rows="5" placeholder="Введите текст новости" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="newsDate" class="form-label">Дата публикации</label>
+                    <input type="date" class="form-control" id="newsDate" required>
+                </div>
+                <div class="mb-3">
+                    <label for="newsTime" class="form-label">Время публикации</label>
+                    <input type="time" class="form-control" id="newsTime" required>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Добавить новость</button>
+            </form>
+        </div>
+    </div>
 </div>
-
 {% endblock %}
