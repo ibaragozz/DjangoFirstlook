@@ -9,13 +9,22 @@
 
     {% if news %}
         {% for news in news %}
-            <div>
-                <h2>{{ news.title }}</h2>
-                <p>{{ news.short_description }}</p>
-                <p>{{ news.text }}</p>
-                <p>{{ news.pub_date }}</p>
-                <p>{{ news.author }}</p>
+            <div class="card">
+
+<!--                    <h2>{{ news.title }}</h2>-->
+<!--                    <p>{{ news.short_description }}</p>-->
+<!--                    <p>{{ news.text }}</p>-->
+<!--                    <p>{{ news.pub_date }}</p>-->
+<!--                    <p>{{ news.author }}</p>-->
+                    <div class="card" style="width: 30rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">{{ news.title }}</h5>
+                        <p class="card-text">{{ news.short_description }}</p>
+                        <a href="#" class="btn btn-primary">Подробнее</a>
+  </div>
+</div>
             </div>
+
         {% endfor %}
     {% else %}
         <h4>Новостей ещё нет</h4>

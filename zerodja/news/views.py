@@ -5,3 +5,6 @@ from .models import NewsPost
 def home(request):
     news = NewsPost.objects.all()
     return render(request, 'news/news.html', {'news': news})
+
+def create(request):
+    return render(request, 'news/create.html')
