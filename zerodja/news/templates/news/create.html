@@ -10,7 +10,7 @@
 
     <div class="card shadow-sm">
         <div class="card-body">
-            
+
             <form method="post">
                 {% csrf_token %}
                 <div class="mb-3">
@@ -25,9 +25,13 @@
                 <div class="mb-3">
                     {{ form.pub_date }}
                 </div>
+                <div class="mb-3">
+                    {{ form.author }}
+                </div>
 
                 <button type="submit" class="btn btn-success w-100">Добавить новость</button>
             </form>
+            <p> {{ error }} </p>
         </div>
     </div>
 </div>
