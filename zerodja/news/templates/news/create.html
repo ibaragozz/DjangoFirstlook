@@ -10,29 +10,22 @@
 
     <div class="card shadow-sm">
         <div class="card-body">
-            <h2 class="card-title">Форма для добавления новости</h2>
+            
             <form method="post">
                 {% csrf_token %}
                 <div class="mb-3">
-                    <label for="newsTitle" class="form-label">Заголовок новости</label>
-                    <input type="text" class="form-control" id="newsTitle" placeholder="Введите заголовок" required>
+                    {{ form.title }}
                 </div>
                 <div class="mb-3">
-                    <label for="shortDescription" class="form-label">Краткое описание</label>
-                    <input type="text" class="form-control" id="shortDescription" placeholder="Введите краткое описание" required>
+                    {{ form.short_description }}
                 </div>
                 <div class="mb-3">
-                    <label for="newsText" class="form-label">Текст новости</label>
-                    <textarea class="form-control" id="newsText" rows="5" placeholder="Введите текст новости" required></textarea>
+                    {{ form.text }}
                 </div>
                 <div class="mb-3">
-                    <label for="newsDate" class="form-label">Дата публикации</label>
-                    <input type="date" class="form-control" id="newsDate" required>
+                    {{ form.pub_date }}
                 </div>
-                <div class="mb-3">
-                    <label for="newsTime" class="form-label">Время публикации</label>
-                    <input type="time" class="form-control" id="newsTime" required>
-                </div>
+
                 <button type="submit" class="btn btn-success w-100">Добавить новость</button>
             </form>
         </div>
